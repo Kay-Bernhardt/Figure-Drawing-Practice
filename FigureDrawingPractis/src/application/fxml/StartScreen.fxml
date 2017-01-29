@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ui_controller.StartScreenController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="300.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="81.0" prefWidth="600.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#selectFolder" prefWidth="70.0" text="Browse" />
+                  <Label fx:id="folderLabel" text="No Folder Selected">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></Label>
+               </children>
+            </HBox>
+            <TabPane fx:id="tabPane" minWidth="-Infinity" prefHeight="206.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                  <Tab id="invisable-tab" styleClass="invisable-tab" text="this tab is realy  realy realy wide      ">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                <Tab fx:id="practiceTab" text="Practice Session">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" fillWidth="false" AnchorPane.topAnchor="30.0">
+                                 <children>
+                                    <Label text="Fixed time for all images." />
+                                    <HBox alignment="CENTER" prefWidth="582.0">
+                                       <children>
+                                          <ToggleButton fx:id="thirtyToggleButton" mnemonicParsing="false" onAction="#setTime" prefWidth="50.0" text="30s" />
+                                          <ToggleButton fx:id="fourtyFiveToggleButton" mnemonicParsing="false" onAction="#setTime" prefWidth="50.0" text="45s" />
+                                          <ToggleButton fx:id="oneToggleButton" mnemonicParsing="false" onAction="#setTime" prefWidth="50.0" text="1m" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefWidth="600.0">
+                                       <children>
+                                          <ToggleButton fx:id="twoToggleButton" mnemonicParsing="false" onAction="#setTime" prefWidth="50.0" text="2m" />
+                                          <ToggleButton fx:id="fiveToggleButton" mnemonicParsing="false" onAction="#setTime" prefWidth="50.0" text="5m" />
+                                          <ToggleButton fx:id="tenToggleButton" mnemonicParsing="false" onAction="#setTime" prefWidth="50.0" text="10m" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Custom Session">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="177.0" prefWidth="600.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label text="Ctrl click to deselect session">
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding></Label>
+                                    <HBox alignment="TOP_CENTER" fillHeight="false" prefWidth="600.0">
+                                       <children>
+                                          <ListView fx:id="sessionListView" prefHeight="140.0" prefWidth="150.0" />
+                                          <VBox alignment="TOP_CENTER" prefHeight="127.0" prefWidth="140.0">
+                                             <children>
+                                                <Button fx:id="customSessionButton" mnemonicParsing="false" onAction="#createCustomSession" prefWidth="140.0" text="Create custom session" />
+                                                <Button mnemonicParsing="false" onAction="#removeSession" prefWidth="140.0" text="Remove session">
+                                                   <VBox.margin>
+                                                      <Insets top="2.0" />
+                                                   </VBox.margin></Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TabPane>
+            <HBox alignment="CENTER" fillHeight="false" prefHeight="34.0" prefWidth="600.0">
+               <children>
+                  <ToggleButton fx:id="onTopToggleButton" mnemonicParsing="false" text="Always on top" />
+                  <ToggleButton fx:id="maximizeToggleButton" mnemonicParsing="false" text="Maximize slideshow" />
+                  <ToggleButton fx:id="randomizeToggleButton" mnemonicParsing="false" text="Randomize list" />
+               </children>
+            </HBox>
+            <Button fx:id="goButton" alignment="CENTER" mnemonicParsing="false" onAction="#startSession" text="Start Session">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
